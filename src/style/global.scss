@@ -3,12 +3,27 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
-  background: #333;
-  color: #fff;
+  padding: 10px;
+  font: 16px arial, helvetica, sans-serif;
+  font-size: 18px;
+}
 
-  h1 {
-    color: blue;
+ul {
+  list-style: none;
+  color: inherit;
+}
+
+li {
+  padding: 10px 30px;
+
+  strong {
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  p {
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
 }
