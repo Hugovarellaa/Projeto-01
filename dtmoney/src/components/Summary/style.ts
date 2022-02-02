@@ -1,42 +1,34 @@
 import styled from "styled-components";
 
-export const Container = styled.main`
-  max-width: 1120;
-  margin: 0 auto;
+export const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 2rem;
+  margin-top: -5.5rem;
 
-  > div {
+  div {
     background: var(--shape);
     padding: 1.5rem 2rem;
     border-radius: 0.25rem;
-    margin-top: -3rem;
+    color: var(--text-title);
 
-    div {
+    header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-
-      p {
-        font-size: 1rem;
-        font-weight: 400;
-        line-height: 2rem;
-      }
-      img {
-        width: 30px;
-        height: 30px;
-      }
     }
+
     strong {
+      display: block;
+      margin-top: 1rem;
       font-size: 2rem;
-      line-height: 4rem;
       font-weight: 500;
+      line-height: 2rem;
     }
 
     &:last-child {
       background: var(--green);
-      color: var(--shape);
+      color: #fff;
     }
   }
 `;

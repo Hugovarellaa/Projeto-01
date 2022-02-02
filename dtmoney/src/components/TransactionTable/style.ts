@@ -1,37 +1,36 @@
 import styled from "styled-components";
 
-export const Container = styled.table`
-  width: 100%;
+export const Container = styled.div`
   margin-top: 4rem;
-  border-spacing: 0 0.5rem;
 
-  th {
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 2rem;
-    color: var(--text-body);
-    text-align: left;
-  }
+  table {
+    width: 100%;
+    border-spacing: 0 0.5rem;
 
-  td {
-    background: var(--shape);
-    padding: 2rem 1.5rem;
-    border-radius: 0.25rem;
-    color: var(--text-body);
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 2rem;
-
-    &.deposit {
-      color: var(--red);
+    th {
+      color: var(--text-body);
+      font-weight: 400;
+      text-align: left;
+      padding: 1rem 2rem;
     }
 
-    &.withdraw {
-      color: var(--green);
-    }
+    td {
+      padding: 1rem 2rem;
+      border: 0;
+      background: var(--shape);
+      border-radius: 0.25rem;
+      color: var(--text-body);
 
-    &:first-child {
-      color: var(--text-title);
+      &.deposit {
+        color: var(--green);
+      }
+      &.withdraw {
+        color: var(--red);
+      }
+
+      &:first-child {
+        color: var(--text-title);
+      }
     }
   }
 `;

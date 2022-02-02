@@ -1,17 +1,28 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
-    :root{
-        --blue: #5429CC;
-        --blue-light: #6933FF;
-        --green: #33CC95;
+     :root{
+         /* --background: #f0f2f5; */
+        --background: #E2E8F0;
         --red: #E52E4D;
-        --shape: #FFFFFF;
-        --text-title: #363F5F;
-        --text-body: #969CB2;
+        --blue: #5429cc;
+        --blue-light: #6933ff;
+        --text-title: #363f5f;
+        --text-body: #969cb3;
+        --shape:#FFFFFF;
+        --green: #33CC95;
+    }
 
-        --background: #CBD5E0;
-        /* --background: #F0F2F5; */
+    @media(max-width:1080px){
+        html{
+            font-size:93.75%; 
+        }
+    }
+
+     @media(max-width:720px){
+         html{
+             font-size: 87.5%; //14px
+             }
     }
 
     *{
@@ -20,29 +31,17 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
 
-    @media (min-width:1080px){
-        html{
-            font-size: 93.75%;
-        }
-    }
-
-    @media (min-width:720px){
-        html{
-            font-size: 87.5%;
-        }
-    }
-
     body{
         background: var(--background);
         -webkit-font-smoothing: antialiased;
     }
 
-    body, input, button, select, textarea {
-        font-family: "Poppins", sans-serif;
+    body, button, input, select, textarea{
+        font-family: "Poppins",sans-serif;
         font-weight: 400;
     }
 
-    h1, h2, h3, h4, h5, h6 , strong {
+    h1, h2, h3, h4, h5, h6, strong{
         font-weight: 600;
     }
 
@@ -51,27 +50,13 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     a{
+        text-decoration: none;
         color: inherit;
-        text-decoration:none;
     }
 
-    .modal-container{
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: rgba(0, 0, 0, 0.5);
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    [disabled]{
+        opacity: 0.6;
+        cursor: not-allowed;
     }
-    .modal-content {
-        max-width: 576px;
-        background: var(--background);
-        padding: 3rem;
-        border-radius: 0.25rem;
 
-       
-    }
 `;
