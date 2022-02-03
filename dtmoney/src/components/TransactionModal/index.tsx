@@ -4,7 +4,7 @@ import closeImg from "../../assets/close.svg";
 import incomeImg from "../../assets/income.svg";
 import outcomeImg from "../../assets/outcome.svg";
 import { FormEvent, useState } from "react";
-import { api } from "../../services/axios";
+import { useTransaction } from "../../hooks/useTransaction";
 
 interface TransactionModalProps {
   isOpen: boolean;
@@ -15,15 +15,29 @@ export function TransactionModal({
   isOpen,
   onRequestClose,
 }: TransactionModalProps) {
+  const { createTransaction } = useTransaction();
+
   const [type, setType] = useState("deposit");
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState(0);
   const [category, setCategory] = useState("");
 
-  function handleCreateTransaction(event: FormEvent) {
+  async function handleCreateTransaction(event: FormEvent) {
     event.preventDefault();
 
-    api.post("/transactions");
+    await createTransaction({
+      title,
+      amount,
+      category,
+      type,
+    });
+
+    onRequestClose();
+
+    setTitle("");
+    setType("deposit");
+    setAmount(0);
+    setCategory("");
   }
 
   return (

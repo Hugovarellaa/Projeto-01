@@ -5,6 +5,7 @@ import { createServer, Model } from "miragejs";
 import Modal from "react-modal";
 import { useState } from "react";
 import { TransactionModal } from "./components/TransactionModal";
+import { TransactionProvider } from "./hooks/useTransaction";
 
 Modal.setAppElement("#root");
 
@@ -14,24 +15,7 @@ createServer({
   },
   seeds(server) {
     server.db.loadData({
-      transactions: [
-        {
-          id: 1,
-          title: "Salario",
-          amount: 3500,
-          type: "deposit",
-          category: "Dev",
-          createdAt: new Date("2022-02-02"),
-        },
-        {
-          id: 2,
-          title: "Aluguel",
-          amount: 1500,
-          type: "withdraw",
-          category: "Casa",
-          createdAt: new Date("2022-02-05"),
-        },
-      ],
+      transactions: [],
     });
   },
   routes() {
@@ -59,7 +43,7 @@ export function App() {
   }
 
   return (
-    <>
+    <TransactionProvider>
       <GlobalStyle />
       <Header isOpen={handleModalOpen} />
       <Dashboard />
@@ -67,6 +51,6 @@ export function App() {
         isOpen={transactionModal}
         onRequestClose={handleModalClose}
       />
-    </>
+    </TransactionProvider>
   );
 }
