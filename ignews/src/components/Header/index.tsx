@@ -1,16 +1,25 @@
 import { SignInButton } from "../SignInButton";
 import styles from "./styles.module.scss";
+import Link from "next/link";
+
+import { ArchiveLink } from "../ArchiveLink";
 
 export function Header() {
   return (
     <header className={styles.container}>
       <div className={styles.content}>
-        <img src="/images/logo.svg" alt="logo igneews" />
-        <nav>
-          <a href="" className={styles.active}>
-            Home
+        <Link href="/" passHref>
+          <a>
+            <img src="/images/logo.svg" alt="logo igneews" />
           </a>
-          <a href="">Post</a>
+        </Link>
+        <nav>
+          <ArchiveLink activeClassName={styles.active} href="/">
+            <a>Home</a>
+          </ArchiveLink>
+          <ArchiveLink href="/posts" activeClassName={styles.active}>
+            <a>Post</a>
+          </ArchiveLink>
         </nav>
         <SignInButton />
       </div>
