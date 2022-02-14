@@ -1,7 +1,7 @@
 import { Avatar, Box, Flex, Text } from "@chakra-ui/react";
 
 interface PorfileProps {
-  showProfileData: boolean;
+  showProfileData?: boolean;
 }
 
 export function Profile({ showProfileData = true }: PorfileProps) {
