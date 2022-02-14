@@ -1,6 +1,7 @@
 import { Button, Flex, FormControl, FormLabel, Stack } from "@chakra-ui/react";
 import { Input } from "../components/Form/Input";
-const Home = () => {
+
+const SignIn = () => {
   return (
     <>
       <Flex width="100vw" height="100vh" align="center" justify="center">
