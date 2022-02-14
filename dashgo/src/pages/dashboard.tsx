@@ -46,7 +46,17 @@ const options = {
       "2022-01-12T00:00:00.000Z",
     ],
   },
-};
+  fill: {
+    opacity: 0.3,
+    type: "gradient",
+    gradient: {
+      shade: "dark",
+      opacityFrom: 0.7,
+      opacityTo: 0.3,
+    },
+  },
+} as const;
+
 const series = [{ name: "series 1", data: [31, 120, 18, 200, 18, 70, 6, 50] }];
 
 export default function Dashboard() {
