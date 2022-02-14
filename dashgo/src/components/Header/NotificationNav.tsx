@@ -4,10 +4,10 @@ import { RiNotificationLine, RiUserAddLine } from "react-icons/ri";
 export function NotificationNav() {
   return (
     <Stack
-      spacing="8"
+      spacing={["6", "8"]}
       direction="row"
-      mx="8"
-      paddingRight="8"
+      mx={["6", "8"]}
+      paddingRight={["6", "8"]}
       py="1"
       color="gray.300"
       borderRightWidth={1}
