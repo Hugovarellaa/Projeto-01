@@ -28,4 +28,4 @@ const SignIn = () => {
   );
 };
 
-export default Home;
+export default SignIn;
